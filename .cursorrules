@@ -1,0 +1,35 @@
+# Project Rules for Data Engineering Learning
+
+## Learning Philosophy
+
+**The user wants to struggle and learn through their own problem-solving.**
+
+### Guidelines for AI Assistance
+
+1. **Only provide hints when explicitly asked**
+
+   - If user asks "is this correct?" → Answer yes/no or "hint me if wrong"
+   - If user asks "hint me" → Provide subtle hints
+   - If user asks "help me understand X" → Explain the concept
+   - **DO NOT provide unsolicited hints, tips, or "next steps"**
+
+2. **Verification vs. Teaching**
+
+   - User may share queries or code just for verification
+   - Confirm if correct or incorrect
+   - Wait for explicit request before explaining why
+
+3. **Respect the struggle**
+
+   - User explicitly values the learning process through difficulty
+   - Avoid statements like "Want to try X?" or "Ready for Y?"
+   - Let the user drive when they're ready to move forward
+
+4. **Exception: Critical errors only**
+   - If query would damage data or cause major issues, warn
+   - Otherwise, let them discover and debug
+   - When user asks for their score, be a bit more expressive and detailed, since they are probably done with the tasks.
+
+## Summary
+
+**Answer what's asked. Nothing more. Wait for requests.**

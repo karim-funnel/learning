@@ -1,0 +1,199 @@
+[0m20:20:02.359918 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ad04980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bc3b750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bc3b890>]}
+
+
+============================== 20:20:02.377243 | 7b1a7b80-31db-42a3-a306-15659f946358 ==============================
+[0m20:20:02.377243 [info ] [MainThread]: Running with dbt=1.11.2
+[0m20:20:02.377512 [debug] [MainThread]: running dbt with arguments {'log_path': 'logs', 'cache_selected_only': 'False', 'target_path': 'None', 'partial_parse': 'True', 'warn_error': 'None', 'invocation_command': 'dbt init pagila_analytics', 'printer_width': '80', 'log_cache_events': 'False', 'use_colors': 'True', 'introspect': 'True', 'indirect_selection': 'eager', 'profiles_dir': '/Users/karim.pichara/.dbt', 'static_parser': 'True', 'quiet': 'False', 'debug': 'False', 'log_format': 'default', 'no_print': 'None', 'fail_fast': 'False', 'write_json': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_experimental_parser': 'False', 'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'empty': 'None'}
+[0m20:20:02.408025 [info ] [MainThread]: Creating dbt configuration folder at /Users/karim.pichara/.dbt
+[0m20:20:02.409020 [debug] [MainThread]: Starter project path: /Users/karim.pichara/learning/.venv/lib/python3.13/site-packages/dbt/include/starter_project
+[0m20:20:02.413557 [info ] [MainThread]: 
+Your new dbt project "pagila_analytics" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m20:20:02.413717 [info ] [MainThread]: Setting up your profile.
+[0m20:23:42.160980 [error] [MainThread]: Encountered an error:
+
+[0m20:23:42.166227 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/karim.pichara/learning/.venv/lib/python3.13/site-packages/dbt/cli/requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/karim.pichara/learning/.venv/lib/python3.13/site-packages/dbt/cli/requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/karim.pichara/learning/.venv/lib/python3.13/site-packages/dbt/cli/main.py", line 483, in init
+    results = task.run()
+  File "/Users/karim.pichara/learning/.venv/lib/python3.13/site-packages/dbt/task/init.py", line 346, in run
+    self.setup_profile(profile_name)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/karim.pichara/learning/.venv/lib/python3.13/site-packages/dbt/task/init.py", line 262, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karim.pichara/learning/.venv/lib/python3.13/site-packages/dbt/task/init.py", line 179, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karim.pichara/learning/.venv/lib/python3.13/site-packages/dbt/task/init.py", line 163, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+  File "/Users/karim.pichara/learning/.venv/lib/python3.13/site-packages/dbt/task/init.py", line 129, in generate_target_from_input
+    target[key] = click.prompt(
+                  ~~~~~~~~~~~~^
+        text, default=default, hide_input=hide_input, type=type
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/karim.pichara/learning/.venv/lib/python3.13/site-packages/click/termui.py", line 171, in prompt
+    value = prompt_func(prompt)
+  File "/Users/karim.pichara/learning/.venv/lib/python3.13/site-packages/click/termui.py", line 154, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m20:23:42.167914 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 219.86, "process_in_blocks": "0", "process_kernel_time": 0.127052, "process_mem_max_rss": "137756672", "process_out_blocks": "0", "process_user_time": 0.5031}
+[0m20:23:42.168426 [debug] [MainThread]: Command `dbt init` failed at 20:23:42.168308 after 219.86 seconds
+[0m20:23:42.168773 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bd6e780>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bf54830>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bcdbac0>]}
+[0m20:23:42.169098 [debug] [MainThread]: Flushing usage events
+[0m20:23:42.783648 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:24:16.301609 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b21c980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c153750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c153890>]}
+
+
+============================== 20:24:16.304133 | 8f66ea7d-6e94-459a-bb68-46fb9a193115 ==============================
+[0m20:24:16.304133 [info ] [MainThread]: Running with dbt=1.11.2
+[0m20:24:16.304381 [debug] [MainThread]: running dbt with arguments {'fail_fast': 'False', 'no_print': 'None', 'target_path': 'None', 'printer_width': '80', 'use_colors': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'indirect_selection': 'eager', 'debug': 'False', 'empty': 'None', 'profiles_dir': '/Users/karim.pichara/.dbt', 'warn_error': 'None', 'log_format': 'default', 'invocation_command': 'dbt debug', 'partial_parse': 'True', 'use_experimental_parser': 'False', 'version_check': 'True', 'quiet': 'False', 'introspect': 'True', 'static_parser': 'True', 'log_path': 'logs', 'send_anonymous_usage_stats': 'True', 'cache_selected_only': 'False', 'write_json': 'True', 'log_cache_events': 'False'}
+[0m20:24:16.313893 [info ] [MainThread]: dbt version: 1.11.2
+[0m20:24:16.316780 [info ] [MainThread]: python version: 3.13.5
+[0m20:24:16.316930 [info ] [MainThread]: python path: /Users/karim.pichara/learning/.venv/bin/python3
+[0m20:24:16.317040 [info ] [MainThread]: os info: macOS-26.1-arm64-arm-64bit-Mach-O
+[0m20:24:16.349260 [info ] [MainThread]: Using profiles dir at /Users/karim.pichara/.dbt
+[0m20:24:16.349457 [info ] [MainThread]: Using profiles.yml file at /Users/karim.pichara/.dbt/profiles.yml
+[0m20:24:16.349564 [info ] [MainThread]: Using dbt_project.yml file at /Users/karim.pichara/learning/dbt_project.yml
+[0m20:24:16.349665 [info ] [MainThread]: Configuration:
+[0m20:24:16.349757 [info ] [MainThread]:   profiles.yml file [[31mERROR invalid[0m]
+[0m20:24:16.349841 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m20:24:16.349926 [info ] [MainThread]: Required dependencies:
+[0m20:24:16.350055 [debug] [MainThread]: Executing "git --help"
+[0m20:24:16.399436 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m20:24:16.399860 [debug] [MainThread]: STDERR: "b''"
+[0m20:24:16.399994 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m20:24:16.400126 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m20:24:16.400292 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m20:24:16.400393 [info ] [MainThread]: Could not load dbt_project.yml
+Profile loading failed for the following reason:
+Runtime Error
+  Credentials in profile "pagila_analytics", target "dev" invalid: 'password' is a required property
+
+
+[0m20:24:16.400485 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </Users/karim.pichara/learning/dbt_project.yml> not found
+
+[0m20:24:16.400815 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.15311658, "process_in_blocks": "0", "process_kernel_time": 0.110601, "process_mem_max_rss": "114262016", "process_out_blocks": "0", "process_user_time": 0.464527}
+[0m20:24:16.401028 [debug] [MainThread]: Command `dbt debug` failed at 20:24:16.400981 after 0.15 seconds
+[0m20:24:16.401223 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c272520>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c799eb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c21c6b0>]}
+[0m20:24:16.401388 [debug] [MainThread]: Flushing usage events
+[0m20:24:16.902878 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:25:00.335596 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108f58980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109e8f750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109e8f890>]}
+
+
+============================== 20:25:00.338376 | 54990fe3-22e8-40e3-b132-a904931e5b8b ==============================
+[0m20:25:00.338376 [info ] [MainThread]: Running with dbt=1.11.2
+[0m20:25:00.338656 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'target_path': 'None', 'static_parser': 'True', 'partial_parse': 'True', 'log_format': 'default', 'empty': 'None', 'log_path': 'logs', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_colors': 'True', 'use_experimental_parser': 'False', 'debug': 'False', 'profiles_dir': '/Users/karim.pichara/.dbt', 'invocation_command': 'dbt debug', 'write_json': 'True', 'no_print': 'None', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'cache_selected_only': 'False', 'quiet': 'False', 'introspect': 'True'}
+[0m20:25:00.347290 [info ] [MainThread]: dbt version: 1.11.2
+[0m20:25:00.347480 [info ] [MainThread]: python version: 3.13.5
+[0m20:25:00.347590 [info ] [MainThread]: python path: /Users/karim.pichara/learning/.venv/bin/python3
+[0m20:25:00.347684 [info ] [MainThread]: os info: macOS-26.1-arm64-arm-64bit-Mach-O
+[0m20:25:00.379739 [info ] [MainThread]: Using profiles dir at /Users/karim.pichara/.dbt
+[0m20:25:00.379950 [info ] [MainThread]: Using profiles.yml file at /Users/karim.pichara/.dbt/profiles.yml
+[0m20:25:00.380056 [info ] [MainThread]: Using dbt_project.yml file at /Users/karim.pichara/learning/dbt_project.yml
+[0m20:25:00.380160 [info ] [MainThread]: Configuration:
+[0m20:25:00.380249 [info ] [MainThread]:   profiles.yml file [[31mERROR invalid[0m]
+[0m20:25:00.380338 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m20:25:00.380417 [info ] [MainThread]: Required dependencies:
+[0m20:25:00.380551 [debug] [MainThread]: Executing "git --help"
+[0m20:25:00.415728 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m20:25:00.416265 [debug] [MainThread]: STDERR: "b''"
+[0m20:25:00.416440 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m20:25:00.416593 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m20:25:00.416825 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m20:25:00.416928 [info ] [MainThread]: Could not load dbt_project.yml
+Profile loading failed for the following reason:
+Runtime Error
+  Credentials in profile "pagila_analytics", target "dev" invalid: None is not of type 'string'
+
+
+[0m20:25:00.417038 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </Users/karim.pichara/learning/dbt_project.yml> not found
+
+[0m20:25:00.417511 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.13892141, "process_in_blocks": "0", "process_kernel_time": 0.141135, "process_mem_max_rss": "114245632", "process_out_blocks": "0", "process_user_time": 0.541117}
+[0m20:25:00.417816 [debug] [MainThread]: Command `dbt debug` failed at 20:25:00.417755 after 0.14 seconds
+[0m20:25:00.418084 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109fae3f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a5cdeb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109f24270>]}
+[0m20:25:00.418285 [debug] [MainThread]: Flushing usage events
+[0m20:25:00.969304 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:25:17.359806 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10afd0980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bf07750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bf07890>]}
+
+
+============================== 20:25:17.362052 | a3f64a63-a89e-40ba-b275-55f36ea51cb2 ==============================
+[0m20:25:17.362052 [info ] [MainThread]: Running with dbt=1.11.2
+[0m20:25:17.362299 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'partial_parse': 'True', 'quiet': 'False', 'empty': 'None', 'introspect': 'True', 'cache_selected_only': 'False', 'indirect_selection': 'eager', 'debug': 'False', 'log_cache_events': 'False', 'log_path': 'logs', 'target_path': 'None', 'fail_fast': 'False', 'use_experimental_parser': 'False', 'static_parser': 'True', 'profiles_dir': '/Users/karim.pichara/.dbt', 'log_format': 'default', 'send_anonymous_usage_stats': 'True', 'warn_error': 'None', 'version_check': 'True', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt debug', 'use_colors': 'True', 'write_json': 'True'}
+[0m20:25:17.369627 [info ] [MainThread]: dbt version: 1.11.2
+[0m20:25:17.369800 [info ] [MainThread]: python version: 3.13.5
+[0m20:25:17.370205 [info ] [MainThread]: python path: /Users/karim.pichara/learning/.venv/bin/python3
+[0m20:25:17.370303 [info ] [MainThread]: os info: macOS-26.1-arm64-arm-64bit-Mach-O
+[0m20:25:17.393817 [info ] [MainThread]: Using profiles dir at /Users/karim.pichara/.dbt
+[0m20:25:17.394044 [info ] [MainThread]: Using profiles.yml file at /Users/karim.pichara/.dbt/profiles.yml
+[0m20:25:17.394150 [info ] [MainThread]: Using dbt_project.yml file at /Users/karim.pichara/learning/dbt_project.yml
+[0m20:25:17.394452 [info ] [MainThread]: adapter type: postgres
+[0m20:25:17.394601 [info ] [MainThread]: adapter version: 1.10.0
+[0m20:25:17.394718 [info ] [MainThread]: Configuration:
+[0m20:25:17.394815 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m20:25:17.394902 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m20:25:17.394987 [info ] [MainThread]: Required dependencies:
+[0m20:25:17.395115 [debug] [MainThread]: Executing "git --help"
+[0m20:25:17.444578 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m20:25:17.445030 [debug] [MainThread]: STDERR: "b''"
+[0m20:25:17.445176 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m20:25:17.445304 [info ] [MainThread]: Connection:
+[0m20:25:17.445418 [info ] [MainThread]:   host: localhost
+[0m20:25:17.445508 [info ] [MainThread]:   port: 5432
+[0m20:25:17.445593 [info ] [MainThread]:   user: karim.pichara
+[0m20:25:17.445677 [info ] [MainThread]:   database: pagila
+[0m20:25:17.445760 [info ] [MainThread]:   schema: analytics
+[0m20:25:17.445845 [info ] [MainThread]:   connect_timeout: 10
+[0m20:25:17.445928 [info ] [MainThread]:   role: None
+[0m20:25:17.446012 [info ] [MainThread]:   search_path: None
+[0m20:25:17.446091 [info ] [MainThread]:   keepalives_idle: 0
+[0m20:25:17.446173 [info ] [MainThread]:   sslmode: None
+[0m20:25:17.446250 [info ] [MainThread]:   sslcert: None
+[0m20:25:17.446330 [info ] [MainThread]:   sslkey: None
+[0m20:25:17.446409 [info ] [MainThread]:   sslrootcert: None
+[0m20:25:17.446486 [info ] [MainThread]:   application_name: dbt
+[0m20:25:17.446563 [info ] [MainThread]:   retries: 1
+[0m20:25:17.446842 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m20:25:17.482376 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m20:25:17.551910 [debug] [MainThread]: Using postgres connection "debug"
+[0m20:25:17.552094 [debug] [MainThread]: On debug: select 1 as id
+[0m20:25:17.552195 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m20:25:17.573374 [debug] [MainThread]: SQL status: SELECT 1 in 0.021 seconds
+[0m20:25:17.573892 [debug] [MainThread]: On debug: Close
+[0m20:25:17.574036 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m20:25:17.574171 [info ] [MainThread]: [31m1 check failed:[0m
+[0m20:25:17.574274 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </Users/karim.pichara/learning/dbt_project.yml> not found
+
+[0m20:25:17.574553 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.26932663, "process_in_blocks": "0", "process_kernel_time": 0.132847, "process_mem_max_rss": "126910464", "process_out_blocks": "0", "process_user_time": 0.492944}
+[0m20:25:17.574750 [debug] [MainThread]: Command `dbt debug` failed at 20:25:17.574698 after 0.27 seconds
+[0m20:25:17.574894 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m20:25:17.575032 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ce74b00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cdf44d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bf9cf30>]}
+[0m20:25:17.575185 [debug] [MainThread]: Flushing usage events
+[0m20:25:18.045681 [debug] [MainThread]: An error was encountered while trying to flush usage events
