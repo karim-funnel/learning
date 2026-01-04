@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: customer_lifetime_value
+    description: "Customer segmentation based on rental history and total spend"
+    columns:
+      - name: customer_id
+        description: "Primary key"
+      - name: total_paid
+        description: "Sum of all payments from this customer"
+      - name: customer_segment
+        description: "Segmentation: low (<$50), medium ($50-$150), high (>$150)"
+      - name: total_rentals
+        description: "Count of distinct rental transactions"
+      - name: avg_payment
+        description: "Average payment amount per transaction"
+      - name: first_payment_date
+        description: "Date of customer's first payment (proxy for acquisition date)"
+      - name: last_payment_date
+        description: "Date of customer's most recent payment (recency metric)"

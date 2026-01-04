@@ -1,0 +1,48 @@
+version: 2
+
+sources:
+  - name: public
+    database: pagila
+    schema: public
+    tables:
+      - name: customer
+      - name: rental
+      - name: payment
+      - name: film
+      - name: inventory
+      - name: store
+      - name: category
+      - name: film_category
+
+models:
+  - name: stg_customers
+    description: "Staging table for customers with cleaned names"
+    columns:
+      - name: customer_id
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
+      - name: email
+        tests:
+          - not_null
+      - name: store_id
+        tests:
+          - not_null
+
+  - name: stg_payments
+    description: "Staging table for payments"
+    columns:
+      - name: payment_id
+        tests:
+          - unique
+          - not_null
+      - name: amount
+        tests:
+          - not_null
+      - name: customer_id
+        tests:
+          - relationships:
+              arguments:
+                to: ref('stg_customers')
+                field: customer_id

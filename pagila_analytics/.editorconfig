@@ -1,0 +1,6 @@
+[*.sql]
+indent_style = space
+indent_size = 2
+trim_trailing_whitespace = true
+
+# Don't auto-format SQL files (preserve Jinja)
