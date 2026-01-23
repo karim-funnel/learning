@@ -27,15 +27,22 @@
 ### Setup (Do this once, before Day 1)
 
 1. Make sure PostgreSQL is installed and running locally.
-2. From your shell:
+
+2. Clone the official Pagila sample database:
+
+```bash
+git clone https://github.com/devrimgunduz/pagila.git
+```
+
+3. Create and load the database:
 
 ```bash
 createdb pagila
-psql -d pagila -f /Users/karim.pichara/learning/pagila/pagila-schema.sql
-psql -d pagila -f /Users/karim.pichara/learning/pagila/pagila-data.sql
+psql -d pagila -f pagila/pagila-schema.sql
+psql -d pagila -f pagila/pagila-data.sql
 ```
 
-3. Confirm it worked:
+4. Confirm it worked:
 
 ```bash
 psql pagila
@@ -43,6 +50,8 @@ pagila=> \dt
 ```
 
 You should see tables like `film`, `customer`, `rental`, `payment`, `store`, `inventory`, `actor`, `category`, etc.
+
+**Tip:** To explore table structures, use `\d tablename` in psql (e.g., `\d customer`).
 
 ### Reference Resources
 
