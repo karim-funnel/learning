@@ -22,4 +22,4 @@ LEFT JOIN {{ ref('stg_payments') }} p USING (rental_id)
 
 {% if is_incremental() %}
     WHERE r.rental_date > (SELECT MAX(rental_date) FROM {{ this }})
-{% endif %}
+{% endif %}g

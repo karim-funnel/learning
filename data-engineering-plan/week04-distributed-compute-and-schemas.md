@@ -86,6 +86,121 @@
    Discuss how you’d evolve the schema while keeping backward and forward compatibility where possible.
 3. Think about your current job: where do you see flexible schemas today? Where would a more strongly defined schema help with data quality or governance?
 
+---
+
+### Day 5 – File Formats (Parquet, CSV, JSON)
+
+**Why This Matters:**
+
+When processing data in pipelines, file format choice impacts:
+- **Query performance** (100x difference between CSV and Parquet for analytical queries)
+- **Storage costs** (compression can reduce size 10x)
+- **Schema enforcement** (catch errors early vs late)
+- **Interoperability** (which tools can read/write the format)
+
+**Study (20–25 min)**
+
+Key concepts to understand:
+
+| Concept | Row-Based (CSV, JSON) | Columnar (Parquet, ORC) |
+|---------|----------------------|------------------------|
+| **Storage** | All columns together per row | Each column stored separately |
+| **Best for** | Full row reads, small data | Aggregations, filtering specific columns |
+| **Compression** | Poor (mixed data types) | Excellent (same type = better compression) |
+| **Schema** | None (CSV) or loose (JSON) | Embedded in file header |
+
+**Format Comparison:**
+
+| Format | Schema | Compression | Use Case |
+|--------|--------|-------------|----------|
+| **CSV** | None | Poor | Data exchange, small files, human editing |
+| **JSON** | Flexible | Moderate | APIs, configs, nested data |
+| **Parquet** | Strong (embedded) | Excellent | Analytics, data lakes, Spark/DuckDB |
+| **Avro** | Strong (separate) | Good | Kafka messages, streaming, schema evolution |
+| **Iceberg** | Table format (on top of Parquet) | Excellent | ACID on data lakes, time travel |
+
+**Parquet Deep Dive:**
+
+```
+Parquet file structure:
+┌─────────────────────────────────┐
+│ Row Group 1                     │
+│   ├─ Column A (compressed)      │
+│   ├─ Column B (compressed)      │
+│   └─ Column C (compressed)      │
+├─────────────────────────────────┤
+│ Row Group 2                     │
+│   ├─ Column A (compressed)      │
+│   └─ ...                        │
+├─────────────────────────────────┤
+│ Footer (schema + metadata)      │
+└─────────────────────────────────┘
+```
+
+Why columnar is fast for analytics:
+- Query `SELECT AVG(amount)` only reads the `amount` column
+- Skip entire row groups based on min/max statistics
+- Compression is better when all values are the same type
+
+**Exercises (hands-on with Polars)**
+
+1. **Benchmark file formats:**
+
+```python
+import polars as pl
+import time
+
+# Create sample data (1M rows)
+df = pl.DataFrame({
+    "customer_id": range(1_000_000),
+    "amount": [i * 0.01 for i in range(1_000_000)],
+    "category": ["A", "B", "C", "D"] * 250_000,
+})
+
+# Write to different formats
+df.write_csv("test.csv")
+df.write_parquet("test.parquet")
+df.write_json("test.json")
+
+# Compare file sizes
+import os
+print(f"CSV: {os.path.getsize('test.csv') / 1024 / 1024:.2f} MB")
+print(f"Parquet: {os.path.getsize('test.parquet') / 1024 / 1024:.2f} MB")
+print(f"JSON: {os.path.getsize('test.json') / 1024 / 1024:.2f} MB")
+
+# Compare read times (analytical query - only need one column)
+start = time.time()
+result = pl.read_csv("test.csv").select("amount").mean()
+print(f"CSV read: {time.time() - start:.3f}s")
+
+start = time.time()
+result = pl.read_parquet("test.parquet").select("amount").mean()
+print(f"Parquet read: {time.time() - start:.3f}s")
+```
+
+2. **Schema inspection:**
+
+```python
+# Parquet stores schema - inspect it
+import pyarrow.parquet as pq
+
+parquet_file = pq.ParquetFile("test.parquet")
+print(parquet_file.schema_arrow)  # See the embedded schema
+print(parquet_file.metadata)      # Row groups, compression, etc.
+```
+
+3. **Answer in your notes:**
+   - When would you choose CSV over Parquet?
+   - When would you choose Parquet over CSV?
+   - How does Parquet's row group structure help with filtering?
+
+**Connection to Week 5:**
+
+In Week 5 (Pipelines), you'll read and write Parquet files in your orchestrated workflows. Understanding file formats helps you:
+- Choose the right format for each pipeline stage
+- Optimize storage and query performance
+- Debug issues related to schema mismatches
+
 
 
 

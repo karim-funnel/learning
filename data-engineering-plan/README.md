@@ -23,12 +23,13 @@ You already know Python and basic SQL; this plan leans heavily on **PostgreSQL +
 This enhanced version addresses the original plan's weaknesses:
 
 1. **Added Week 2.5 for dbt** - Hands-on transformation layer with modern tooling
+2. **Added Week 4.5 for Substrait** - Query plan interoperability (SQL → relational plans)
 2. **Python/Polars integration** - Actual pipeline code instead of pseudocode (Week 5)
 3. **Hands-on tool setup** - Great Expectations, Airflow, dbt all installed and used
 4. **Version control throughout** - Git best practices integrated from Day 1
 5. **Portfolio-ready outputs** - Each week produces work you can show your manager
 
-### High‑Level Roadmap (9 Weeks)
+### High‑Level Roadmap (10 Weeks)
 
 - **Weeks 1–2 – Deep ANSI SQL with Pagila**
 
@@ -56,6 +57,13 @@ This enhanced version addresses the original plan's weaknesses:
   - Topics: Distributed compute (Spark/Beam examples), CAP, AVRO/Thrift, flexible vs defined schemas.
   - Files: `week04-distributed-compute-and-schemas.md`.
   - **Deliverable:** Avro schema designs for events.
+
+- **Week 4.5 – Substrait: Relational Plans & Interoperable Compute** ⭐ NEW
+
+  - Goal: Go from “what is Substrait” → upper beginner / early intermediate: read/understand/validate Substrait plans and relate them to SQL semantics.
+  - Focus: relational operators, expressions/types, serialization, validator + tutorial workflow.
+  - File: `week04.5-substrait.md`.
+  - **Deliverable:** A short write-up + annotated plan examples you can share internally.
 
 - **Week 5 – Pipelines, Idempotency, Orchestration, Logging** ⭐ ENHANCED
 

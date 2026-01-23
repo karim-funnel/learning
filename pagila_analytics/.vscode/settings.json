@@ -1,12 +1,6 @@
 {
   "[sql]": {
     "editor.formatOnSave": false,
-    "editor.formatOnPaste": false,
-    "editor.formatOnType": false,
-    "editor.defaultFormatter": null
-  },
-  "sql.format.enable": false,
-  "sqltools.format.language": false,
-  "sqltools.format.autoFormat": false,
-  "editor.formatOnSave": false
+    "editor.formatOnPaste": false
+  }
 }

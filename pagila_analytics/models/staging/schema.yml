@@ -11,8 +11,6 @@ sources:
       - name: film
       - name: inventory
       - name: store
-      - name: category
-      - name: film_category
 
 models:
   - name: stg_customers

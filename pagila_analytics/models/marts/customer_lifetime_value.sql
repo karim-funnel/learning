@@ -22,14 +22,16 @@ SELECT c.customer_id,
     c.store_id,
     c.active,
     COALESCE(p.total_rentals, 0) AS total_rentals,
-    {{ cents_to_dollars('COALESCE(p.total_paid, 0)') }} AS total_paid,
-    {{ cents_to_dollars('COALESCE(p.avg_payment, 0)') }} AS avg_payment,
+    COALESCE(p.total_paid, 0) AS total_paid,
+    COALESCE(p.avg_payment, 0) AS avg_payment,
     p.first_payment_date,
     p.last_payment_date,
     CASE
         WHEN p.total_paid > 150 THEN 'high'
         WHEN p.total_paid > 50 THEN 'medium'
         ELSE 'low'
-    END AS customer_segment
+    END AS customer_segment,
+    {{ cents_to_dollars('p.total_paid') }} AS total_paid,
+    {{ cents_to_dollars('p.avg_payment') }} AS avg_payment
 FROM customer_info c
     LEFT JOIN customer_payments p USING (customer_id)
